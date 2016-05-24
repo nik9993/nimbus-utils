@@ -1,13 +1,13 @@
-SRCEXT := sh
-SRCDIR := .
-SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
+DST_DIR := nimbus
+SOURCES := lib.sh
 
-DST := $(shell echo $(SOURCES) | sed -e 's/\.$(SRCEXT)//')
+DST := nimbus-utils
 
 all: copy
 
 copy:
-	@cp $(SOURCES) $(DST)
+	@mkdir -p $(DST_DIR)
+	@cp $(SOURCES) $(DST_DIR)/$(DST)
 
 clean:
-	@rm -rf $(DST)
+	@rm -rf $(DST_DIR)
