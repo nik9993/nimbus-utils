@@ -4,7 +4,7 @@ SOURCES := lib.sh
 
 all: copy
 
-copy:
+copy: clean
 	@mkdir -p $(DST_DIR)
 	@cp $(SOURCES) $(DST_DIR)/$(SOURCES)
 
